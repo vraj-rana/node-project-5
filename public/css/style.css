@@ -1,0 +1,427 @@
+/* Midnight & Gold Cinematic Theme Style */
+:root {
+    --bg-dark: #070a13;
+    --bg-card: rgba(15, 22, 42, 0.65);
+    --gold: #f59e0b;
+    --gold-hover: #d97706;
+    --gold-glow: rgba(245, 158, 11, 0.25);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-focus: rgba(245, 158, 11, 0.5);
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --red-delete: #ef4444;
+    --red-delete-hover: #dc2626;
+    --font-main: 'Outfit', sans-serif;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-main);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.9) 0px, transparent 50%),
+        linear-gradient(135deg, #090d16 0%, #111827 100%);
+    background-attachment: fixed;
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Elements */
+.page-overlay {
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* Typography & Badges */
+.brand-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.page-title {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    font-size: 2.25rem;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.text-secondary-muted {
+    color: var(--text-muted);
+}
+
+/* Glassmorphism Card Containers */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(245, 158, 11, 0.25);
+    box-shadow: 0 20px 40px rgba(245, 158, 11, 0.05);
+}
+
+/* Form Styles */
+.form-title {
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: 1.85rem;
+    margin-top: 10px;
+}
+
+.form-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.form-label-custom {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control-custom {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px var(--gold-glow);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.form-control-custom::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom File Upload Styling */
+.file-upload-wrapper {
+    position: relative;
+    width: 100%;
+    height: 56px;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.file-upload-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.file-upload-wrapper:hover .file-upload-mask {
+    border-color: var(--border-focus);
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.upload-icon {
+    font-size: 1.25rem;
+    margin-right: 12px;
+}
+
+.upload-text {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 35px);
+}
+
+.file-selected {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-gold {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-gold:hover {
+    background: var(--gold-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px var(--gold-glow);
+    color: #000;
+}
+
+.btn-gold:active {
+    transform: translateY(0);
+}
+
+.btn-outline-gold {
+    background: transparent;
+    color: var(--gold);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-gold:hover {
+    background: rgba(245, 158, 11, 0.08);
+    color: var(--gold);
+    transform: translateY(-2px);
+    border-color: var(--gold-hover);
+}
+
+/* Movie Card Components */
+.movie-card-custom {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.movie-card-custom:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.12);
+}
+
+.movie-poster-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 140%; /* Modern movie aspect ratio approx 1:1.4 */
+    overflow: hidden;
+    background: #090d16;
+}
+
+.movie-poster-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.movie-card-custom:hover .movie-poster-img {
+    transform: scale(1.06);
+}
+
+.movie-poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(7, 10, 19, 0.9) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.movie-card-custom:hover .movie-poster-overlay {
+    opacity: 1;
+}
+
+.movie-tag-genre {
+    background: var(--gold);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.movie-tag-year {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-primary);
+    backdrop-filter: blur(8px);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.movie-card-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.movie-card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card-info {
+    font-size: 0.85rem;
+}
+
+.movie-card-actions {
+    display: flex;
+    margin-top: auto;
+}
+
+.btn-card {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-card-edit {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.btn-card-edit:hover {
+    background: var(--gold);
+    color: #000;
+    border-color: var(--gold);
+}
+
+.btn-card-delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red-delete);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    margin-left: 8px;
+}
+
+.btn-card-delete:hover {
+    background: var(--red-delete);
+    color: var(--text-primary);
+    border-color: var(--red-delete);
+}
+
+/* Edit & Current Poster styles */
+.edit-poster-thumb {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--gold);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Empty State Styling */
+.empty-state-wrapper {
+    border: 1px dashed var(--border-color);
+    padding: 60px 40px !important;
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    display: block;
+}
+
+/* Error page styles */
+.error-page {
+    background-color: var(--bg-dark);
+}
+
+.error-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(245, 158, 11, 0.1);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.error-icon {
+    font-size: 2.5rem;
+}
+
+/* Responsiveness overrides */
+@media (max-width: 576px) {
+    .glass-card {
+        padding: 24px;
+    }
+    .page-title {
+        font-size: 1.85rem;
+    }
+}
