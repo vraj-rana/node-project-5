@@ -1,10 +1,13 @@
-# CineLog - Premium Movie CRUD Application
+# Movie CRUD Application
 
 A elegant, responsive Movie CRUD (Create, Read, Update, Delete) application built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, and **EJS**. 
 
 This version features a modern **Midnight & Gold (Premium Cinema)** UI design, presenting lists of cataloged titles with translucent glassmorphic components, smooth scaling animations, genre-specific tags, and file-upload poster previews.
 
 ---
+# Code Walkthrough
+https://drive.google.com/file/d/1ImELd_vejJGOSygGZqczbQZU-tZDKsjv/view?usp=sharing
+
 
 ## ✨ Features
 
